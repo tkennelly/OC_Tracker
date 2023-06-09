@@ -8,7 +8,7 @@ const OC = new Schema(
       race: { type: String },
       appearence: { type: String },
       backstory: { type: String, required: true },
-      worldId: {  type: Schema.Types.ObjectId, ref: "world_id"}
+      worldId: {  type: Schema.Types.ObjectId, ref: 'world'}
     },
     { timestamps: true }
 )
