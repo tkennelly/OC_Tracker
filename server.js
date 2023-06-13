@@ -17,4 +17,4 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
 app.get('/', (req, res) => res.json({message: 'This is the home page'}))
 
-app.use('/api', AppRouter)
+app.use('', AppRouter)
