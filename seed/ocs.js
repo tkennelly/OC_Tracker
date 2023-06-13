@@ -17,4 +17,12 @@ const main = async () => {
             worldId: world1[0]._id
         }
     ]
+    await OC.insertMany(ocs)
+    console.log('Created OCs!')
 }
+
+const run = async () => {
+    await main()
+    db.close()
+  }
+  run()

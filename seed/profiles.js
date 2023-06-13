@@ -8,7 +8,7 @@ const main = async () => {
     const profiles = [
         {
             name: 'Theresa',
-            username: tkennelly
+            username: 'tkennelly'
         }
     ]
     await Profile.insertMany(profiles)
