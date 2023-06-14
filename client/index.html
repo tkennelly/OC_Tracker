@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>OC Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="profileDOM.js"></script>
   </head>
 <body>
   <div class="world-sidebar">
@@ -19,14 +21,18 @@
 
 <header>
 <img id="logo">
-<form class="sign-up">
+<form class="sign-in">
 <h3>Login or Sign-up</h3>
 <input id="name" type="text" value="" placeholder="name">
 <input id="username" type="text" value="" placeholder="username">
-<button>Login</button>
-<button>Sign-up</button>
+<button id="login">Login</button>
+<button id="sign-up">Sign-up</button>
 </form>
 </header>
+
+<div id="current-user">
+  
+</div>
 
 <div class="input-area">
   <button id="make-world">Make World</button>

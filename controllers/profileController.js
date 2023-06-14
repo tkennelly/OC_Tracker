@@ -23,6 +23,7 @@ const getProfile = async(req, res) => {
     }
 }
 
+
 const createProfile = async(req, res) => {
     try{
         const profile = new Profile(req.body)
