@@ -5,6 +5,7 @@ const controller = require('../controllers/worldController')
 router.get('/', controller.getAllWorlds)
 router.get('/:user_id', controller.getWorlds)
 router.post('/post', controller.createWorld)
+router.get('/world/:id', controller.getWorldId)
 
 
 module.exports = router

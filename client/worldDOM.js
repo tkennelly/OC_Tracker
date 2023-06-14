@@ -1,5 +1,6 @@
-import { currentProfile } from "./profileDOM.js"
+import { currentProfile, userData } from "./profileDOM.js"
 
+let worldData = null
 let worldBar = document.getElementById("world-sidebar")
 
 const findWorlds = async(user_id) => {
@@ -7,17 +8,24 @@ const findWorlds = async(user_id) => {
 
     console.log(response.data.worlds)
     console.log(response)
+   
 
     for( let i = 0; i < response.data.worlds.length; i++) {
         let button = `<button id="${response.data.worlds[i]._id}">${response.data.worlds[i].name}</button>`
         worldBar.innerHTML += button
+        worldData = response.data.worlds[i]._id
     }
+    //stores the last one
+    console.log(worldData)
 }
+
+
 
 let newWorldButton = document.getElementById('make-world')
 let worldForm = document.querySelector(".world-form")
 
 const createWorldButton = () => {
+    console.log(userData)
     worldForm.style.display = 'block'
 }
 
@@ -33,7 +41,7 @@ const createWorld = async(e) => {
         genre: formProps.genre,
         description: formProps.description,
         // i dont think this works vvv
-        user: currentProfile
+        user: userData._id
     })
 
     currentProfile.innerHTML = `<h1>Created World: ${formProps.name}! Please Find your Profile again for an updated World list.</h1>`

@@ -23,6 +23,20 @@ const getWorlds = async(req, res) => {
     }
 }
 
+const getWorldId = async(req, res) => {
+    try{
+        const { id } = req.params
+        const world = await World.findById(id)
+        if(world){
+            return res.status(200).json( world )
+        } else {
+            return res.status(400).send('World does not exist')
+        }
+    } catch (e){
+        return res.status(500).send(e.message)
+    }
+}
+
 const createWorld = async(req, res) => {
     try{
         const world = new World(req.body)
@@ -36,5 +50,6 @@ const createWorld = async(req, res) => {
 module.exports = {
     getAllWorlds,
     getWorlds,
-    createWorld
+    createWorld,
+    getWorldId
 }

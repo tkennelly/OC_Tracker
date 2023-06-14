@@ -4,6 +4,7 @@ let name = document.querySelector("#name")
 let findProfile = document.querySelector(".find-profile")
 let createProfile = document.querySelector(".create-profile")
 let currentProfile = document.getElementById("current-profile")
+let userData = null
 
 const findButton = async(e) => {
     e.preventDefault()
@@ -14,10 +15,11 @@ const findButton = async(e) => {
 
     let response = await axios.get(`http://localhost:3001/profiles/${formProps.username}`)
     console.log(response.data.profile[0])
+    userData = response.data.profile[0]
 
     
 
-    currentProfile.innerHTML = `<h1>Profile: ${response.data.profile[0].username}</h1>`
+    currentProfile.innerHTML = `${response.data.profile[0].username}`
 
     findWorlds(response.data.profile[0]._id)
 }
@@ -41,4 +43,4 @@ const createButton = async(e) => {
 findProfile.addEventListener('submit', findButton)
 createProfile.addEventListener('submit', createButton)
 
-export { currentProfile }
+export { currentProfile, userData }
