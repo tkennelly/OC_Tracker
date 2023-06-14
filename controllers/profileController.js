@@ -11,9 +11,11 @@ const getAllProfiles = async(req, res) => {
 
 const getProfile = async(req, res) => {
     try{
-        const { id } = req.params
-        const profile = await Profile.findById(id)
+        const { username } = req.params
+        console.log(req.params)
+        const profile = await Profile.find({ username: username })
         if(profile){
+            console.log(profile)
             return res.status(200).json({ profile })
         } else {
             return res.status(400).send('Profile does not exist')

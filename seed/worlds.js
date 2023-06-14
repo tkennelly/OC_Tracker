@@ -20,6 +20,18 @@ const main = async () => {
             after. To some other systems, 223 is basically a glorified mall
             with 5 stores.`,
             user: profile1[0]._id
+        },
+        {
+            name: 'This One',
+            genre: 'Story',
+            description: `Hi`,
+            user: profile1[0]._id
+        },
+        {
+            name: 'World 3',
+            genre: 'Game',
+            description: `Hello`,
+            user: profile1[0]._id
         }
     ]
     await World.insertMany(worlds)

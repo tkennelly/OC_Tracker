@@ -7,7 +7,6 @@ const main = async () => {
 
     const profiles = [
         {
-            name: 'Theresa',
             username: 'tkennelly'
         }
     ]

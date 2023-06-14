@@ -1,24 +1,44 @@
-console.log('working')
+import { findWorlds } from "./worldDOM.js"
 
 let name = document.querySelector("#name")
-let username = document.querySelector("#username")
-let login = document.querySelector("#login")
-let signUp = document.querySelector("#sign-up")
-let currentUser = document.querySelector("#current-user")
+let findProfile = document.querySelector(".find-profile")
+let createProfile = document.querySelector(".create-profile")
+let currentProfile = document.getElementById("current-profile")
 
-const loginButton = async(e) => {
+const findButton = async(e) => {
     e.preventDefault()
     console.log('working')
-    let response = await axios.get(`http://localhost:3001/profiles/${username.value}`)
-    let loggedIn = response.data.profiles
-    currentUser.innerHTML = `<h3> Welcome ${loggedIn}</h3>`
+    // to work with forms vvv
+    const formData = new FormData(e.target)
+    const formProps = Object.fromEntries(formData)
+
+    let response = await axios.get(`http://localhost:3001/profiles/${formProps.username}`)
+    console.log(response.data.profile[0])
+
+    
+
+    currentProfile.innerHTML = `<h1>Profile: ${response.data.profile[0].username}</h1>`
+
+    findWorlds(response.data.profile[0]._id)
 }
 
-const signUpButton = async(e) => {
+const createButton = async(e) => {
     e.preventDefault()
     console.log('working')
-    const response = await axios.get(`http://localhost:3001/profiles`)
+    // to work with forms vvv
+    const formData = new FormData(e.target)
+    const formProps = Object.fromEntries(formData)
+
+    let response = await axios.post(`http://localhost:3001/profiles/post`, {
+        username: formProps.username
+    })
+
+    
+
+    currentProfile.innerHTML = `<h1>Created Profile: ${formProps.username}</h1>`
 }
 
-login.addEventListener('click', loginButton)
-signUp.addEventListener('click', signUpButton)
+findProfile.addEventListener('submit', findButton)
+createProfile.addEventListener('submit', createButton)
+
+export { currentProfile }
