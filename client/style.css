@@ -1,9 +1,8 @@
 body {
-    margin-left: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
     background-color: pink;
 }
-
-
 
 header {
     display: grid;
@@ -66,14 +65,9 @@ header {
     display: none;
 }
 
-/* #world-sidebar {
-    background-color: blue;
-} */
-
 /* this doesnt appear in html */
 #world-button {
     margin-top: 30px;
-    /* justify-content: space-around; */
     color: white;
     background-color: rgb(149, 0, 60);
     font-size: 12px;
@@ -94,15 +88,72 @@ header {
 #form-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-	background-color: white;
-	height: 350px;
-	width: 550px;
+    /* justify-content: space-around; */
+	background-color: rgb(255, 159, 175);
+	height: 650px;
+	width: 1050px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 	border-radius: 2px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     padding: 2%;
     line-height: 120%;
+}
+
+/* inputs in world pop-up  */
+
+#instruct {
+    margin-top: 140px;
+}
+
+#world-name {
+    margin-bottom: 10px;
+}
+
+#world-genre {
+    margin-bottom: 10px;
+}
+
+#world-description {
+    margin-bottom: 30px;
+}
+
+/* inputs in OC pop-up  */
+
+#instruct2 {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+
+#oc-name {
+    margin-bottom: 10px;
+}
+
+#oc-age {
+    margin-bottom: 10px;
+}
+
+#oc-gender {
+    margin-bottom: 10px;
+}
+
+#oc-race {
+    margin-bottom: 10px;
+}
+
+#oc-appearence {
+    margin-bottom: 10px;
+}
+
+#oc-backstory {
+    margin-bottom: 10px;
+}
+
+#oc-world {
+    margin-bottom: 30px;
 }
 
 #make-buttons {
@@ -123,6 +174,22 @@ header {
 
 #create-world {
     display: none;
+}
+
+#create-oc {
+    display: none;
+}
+
+#close-make-world {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 18px;
+}
+
+#close-make-oc {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 18px;
 }
 
 #make-oc {
