@@ -9,14 +9,18 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer type="module" src="profileDOM.js"></script>
     <script defer type="module" src="worldDOM.js"></script>
+    <script defer type="module" src="ocDOM.js"></script>
   </head>
-<body>
-  <div id="world-sidebar">
 
-  </div>
+<body>
+
 
 <header>
-<img id="logo">
+
+<div class="logo">
+  <img id="logo" src="OC.png">
+</div>
+
 <form class="find-profile">
   <h3>Find Profile</h3>
   <input id="username-find" name="username" type="text" placeholder="username">
@@ -28,21 +32,36 @@
   <input id="username-create" name="username" type="text" value="" placeholder="username">
   <input type="submit" id="create-profile" value="Create Profile">
 </form>
+
 </header>
 
-<div class="current-profile">
-  <h1 id="current-profile"></h1>
-</div>
+
 
 <div id="current-worlds"></div>
 
 <form class="world-form">
   <div id="form-text">
-  <input id="world-name" name="name" type="text" value="" placeholder="name">
-  <input id="world-genre" name="genre" type="text" value="" placeholder="genre">
-  <input id="world-description" name="description" type="text" value="" placeholder="description">
-  <input type="submit" id="create-world" value="Create World">
-  <button id="close-make-world">Close</button>
+    <h3 id="instruct">Enter the Name of your world, the Genre, and a Description of your world!</h3>
+    <input id="world-name" name="name" type="text" value="" placeholder="name">
+    <input id="world-genre" name="genre" type="text" value="" placeholder="genre">
+    <textarea id="world-description" name="description" value="" placeholder="description" rows="3" cols="20"></textarea>
+    <input type="submit" id="create-world" value="Create World">
+    <button id="close-make-world">Submit</button>
+  </div>
+</form>
+
+<form class="oc-form">
+  <div id="form-text">
+    <h3 id="instruct">Enter the Name, Age (number only), Gender, Race (optional), appearence (optional), Backstory of your OC in the respecitive boxes! Don't forget to add the World your OC lives in, or your OC will not be saved!</h3>
+    <input id="oc-name" name="name" type="text" value="" placeholder="name">
+    <input id="oc-age" name="age" type="text" value="" placeholder="age">
+    <input id="oc-gender" name="gender" type="text" value="" placeholder="gender">
+    <input id="oc-race" name="race" type="text" value="" placeholder="race">
+    <input id="oc-appearence" name="appearence" type="text" value="" placeholder="appearence">
+    <input id="oc-backstory" name="backstory" type="text" value="" placeholder="backstory" rows="3" cols="20">
+    <input id="oc-world" name="world" type="text" value="" placeholder="worldId">
+    <input type="submit" id="create-oc" value="Create OC">
+    <button id="close-make-oc">Close</button>
   </div>
 </form>
 
@@ -60,7 +79,16 @@
     <button id="OC4">OC4</button> -->
   </div>
 
+  <div class="current-profile">
+    
+  </div>
+
   <div id="info">
+    <div id="current-profile-align">
+      <h3>Current Profile:</h3>
+      <h3 id="current-profile">Please Find or Create a Profile.</h1>
+    </div>
+
     <h3 id ="info-header">Information about your World and OC will appear here! Find your profile (or create one) to get started!</h3>
     <h3 id="info1"></h3>
     <h3 id="info2"></h3>
@@ -68,6 +96,10 @@
     <h3 id="info4"></h3>
     <p id="info5"></p>
     <p id="info6"></p>
+
+    <div id="world-sidebar">
+    </div>
+
   </div>
 </div>
 </body>

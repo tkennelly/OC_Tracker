@@ -1,37 +1,58 @@
 body {
     margin-left: 80px;
+    background-color: pink;
 }
 
+
+
 header {
-    width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 1050px;
     height: 200px;
     margin-left: 10px;
     margin-bottom: 50px;
     font-size: 18px;
-    text-align: right;
-    /* justify-self: end; */
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    /* text-align: right; */
+    flex-direction: column;
+    justify-content: center; 
     padding: none;
-    background-color: #df8dfc;
+    background-color: rgb(255, 159, 175);
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 10px;
-    border-radius: 5px;
+    border-radius: 35px;
     /* box-shadow: 2px 2px 2px 2px rgba(219, 33, 144, 0.6); */
 }
 
-#world-sidebar {
-    display: block;
-    position: absolute;
-    justify-content: space-around;
-    margin: 200px 20px 20px -70px;
-    width: 60px;
-    height: 20px;
-    font-size: 8pt;
-    font-weight: bold;
-    color: white;
-   
-    /* float:left;  */
+#logo {
+    border-radius: 20%;
+    margin-top: 10px;
+    margin-left: 5px;
+    float: left;
+    height: 190px;
+    width: 190px;
 }
+
+.find-profile {
+    float: right;
+}
+
+#find-profile {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 12px;
+}
+
+#create-profile {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 12px;
+}
+
+
 
 .world-form {
 	background-color: rgba(0,0,0,0.4);
@@ -45,7 +66,35 @@ header {
     display: none;
 }
 
+/* #world-sidebar {
+    background-color: blue;
+} */
+
+/* this doesnt appear in html */
+#world-button {
+    margin-top: 30px;
+    /* justify-content: space-around; */
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 12px;
+}
+
+.oc-form {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	overflow: auto;
+    display: none;
+}
+
 #form-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 	background-color: white;
 	height: 350px;
 	width: 550px;
@@ -56,17 +105,70 @@ header {
     line-height: 120%;
 }
 
+#make-buttons {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ justify-content: space-around;
+ /* position: absolute; */
+ margin-bottom: 20px;
+ margin-top: -25px;
+}
+
+#make-world {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 40px;
+}
+
+#create-world {
+    display: none;
+}
+
+#make-oc {
+    color: white;
+    background-color: rgb(149, 0, 60);
+    font-size: 40px;
+}
+
+#current-profile-align {
+    display: flex;
+    margin-left: 200px;
+    margin-right: 200px;
+    flex-direction: row;
+    /* justify-content: center; */
+    justify-content: space-around;
+}
+
 #info {
-    width: 1000px;
+    width: 1050px;
     height: 500px;
     margin-left: 10px;
     margin-bottom: 50px;
     font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
     text-align: center;
     padding: 10px;
-    background-color: #df8dfc;
+    background-color: rgb(255, 159, 175);
     padding-bottom: 10px;
     padding-left: 5px;
-    border-radius: 5px;
+    border-radius: 35px;
     /* box-shadow: 2px 2px 2px 2px rgba(219, 33, 144, 0.6); */
   }
+
+  #world-sidebar {
+    display: flex;
+    /* position: absolute; */
+    justify-content: space-between;
+    margin-left: 130px;
+    /* margin-right: 200px; */
+    margin-top: 250px;
+    width: 800px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+   
+    /* float:left;  */
+}

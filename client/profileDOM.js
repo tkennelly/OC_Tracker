@@ -37,7 +37,7 @@ const createButton = async(e) => {
 
     
 
-    currentProfile.innerHTML = `<h1>Created Profile: ${formProps.username}</h1>`
+    currentProfile.innerHTML = `You have created a new profile named ${formProps.username}. Please find your profile to access its Worlds and OCs!`
 }
 
 findProfile.addEventListener('submit', findButton)

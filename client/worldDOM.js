@@ -12,7 +12,8 @@ const findWorlds = async(user_id) => {
    
 
     for( let i = 0; i < response.data.worlds.length; i++) {
-        let button = `<button id="${response.data.worlds[i]._id}">${response.data.worlds[i].name}</button>`
+        // let button = `<button id="${response.data.worlds[i]._id}">${response.data.worlds[i].name}</button>`
+        let button = `<button id="world-button">${response.data.worlds[i].name}</button>`
         worldBar.innerHTML += button
         worldData = response.data.worlds[i]._id
     }
@@ -45,7 +46,7 @@ const createWorld = async(e) => {
         user: userData._id
     })
 
-    currentProfile.innerHTML = `<h1>Created World: ${formProps.name}! Please Find your Profile again for an updated World list.</h1>`
+    currentProfile.innerHTML = `Created World: ${formProps.name}! Please Find your Profile again for an updated World list.`
 }
 
 const closeMakeWorld = () => {
