@@ -40,7 +40,6 @@ const createWorld = async(e) => {
         name: formProps.name,
         genre: formProps.genre,
         description: formProps.description,
-        // i dont think this works vvv
         user: userData._id
     })
 

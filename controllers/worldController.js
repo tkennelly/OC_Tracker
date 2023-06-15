@@ -47,9 +47,39 @@ const createWorld = async(req, res) => {
     }
 }
 
+const updateWorld = async(req, res) => {
+    try{
+        const { id } = req.params
+        const world = await World.findByIdAndUpdate(id, req.body, {new: true})
+        if (world) {
+            return res.status(200).json({World})
+        } else {
+            return res.status(400).json({message: 'World does not exist.'})
+        }
+    } catch (e) {
+        return res.status(500).send(e.message)
+    }
+}
+
+const deleteWorld = async(req, res) => {
+    try {
+        const { id } = req.paramsconst 
+        const world = await World.findByIdAndDelete(id)
+        if (world) {
+            return res.status(200).json({World})
+        } else {
+            return res.status(400).json({message: 'World does not exist.'})
+        }
+    } catch (e) {
+        res.status(500).send(e.message)
+    }
+}
+
 module.exports = {
     getAllWorlds,
     getWorlds,
     createWorld,
-    getWorldId
+    getWorldId,
+    updateWorld,
+    deleteWorld
 }

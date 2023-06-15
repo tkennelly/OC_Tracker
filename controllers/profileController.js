@@ -36,9 +36,40 @@ const createProfile = async(req, res) => {
     }
 }
 
+const updateProfile = async(req, res) => {
+    try{
+        const { id } = req.params
+        const profile = await Profile.findByIdAndUpdate(id, req.body, {new: true})
+        if (profile) {
+            return res.status(200).json({Profile})
+        } else {
+            return res.status(400).json({message: 'Profile does not exist.'})
+        }
+    } catch (e) {
+        return res.status(500).send(e.message)
+    }
+}
+
+const deleteProfile = async(req, res) => {
+    try {
+        const { id } = req.paramsconst 
+        const profile = await Profile.findByIdAndDelete(id)
+        if (profile) {
+            return res.status(200).json({Profile})
+        } else {
+            return res.status(400).json({message: 'Profile does not exist.'})
+        }
+    } catch (e) {
+        res.status(500).send(e.message)
+    }
+}
+
+
 
 module.exports = {
     getAllProfiles,
     getProfile,
-    createProfile
+    createProfile,
+    updateProfile,
+    deleteProfile
 }
