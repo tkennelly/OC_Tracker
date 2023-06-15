@@ -3,6 +3,7 @@ import { currentProfile, userData } from "./profileDOM.js"
 let worldData = null
 let worldBar = document.getElementById("world-sidebar")
 
+
 const findWorlds = async(user_id) => {
     let response = await axios.get(`http://localhost:3001/worlds/${user_id}`)
 
@@ -23,6 +24,7 @@ const findWorlds = async(user_id) => {
 
 let newWorldButton = document.getElementById('make-world')
 let worldForm = document.querySelector(".world-form")
+let closeButton = document.getElementById("close-make-world")
 
 const createWorldButton = () => {
     console.log(userData)
@@ -46,8 +48,13 @@ const createWorld = async(e) => {
     currentProfile.innerHTML = `<h1>Created World: ${formProps.name}! Please Find your Profile again for an updated World list.</h1>`
 }
 
+const closeMakeWorld = () => {
+    worldForm.style.display = 'none'
+}
+
     newWorldButton.addEventListener('click', createWorldButton)
     worldForm.addEventListener('submit', createWorld)
+    closeButton.addEventListener('click', closeMakeWorld)
 
 
 export { findWorlds }
