@@ -14,8 +14,10 @@ By the end of this project there were still a few things I wanted to do, specifi
 
 ## Tech
 
-JavaScript: Used to display results in table form
+JavaScript: Used to display results in table form.
+
 HTML: Used to build the frame of the site as well as all the forms for getting/posting info.
+
 CSS: Used to make things look nice (kind of).
 Mongoose: Used to make and store the custom API.
 
