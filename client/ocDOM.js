@@ -14,7 +14,7 @@ const createOC = async(e) => {
     const formProps = Object.fromEntries(formData)
 
     //make sure its 'oc' and not 'ocs'
-    let response = await axios.post(`http://localhost:3001/oc/post`, {
+    let response = await axios.post(`http://localhost:3001/ocs/post`, {
         name: formProps.name,
         age: formProps.age,
         gender: formProps.gender,
